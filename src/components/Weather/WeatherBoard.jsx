@@ -1,8 +1,14 @@
+import { useWeather } from "../../hooks";
 import ToggoleFavorite from "./ToggoleFavorite";
 import WeatherCondition from "./WeatherCondition";
 import WeatherHeadline from "./WeatherHeadline";
 
+// const api = https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon={lon}&appid={API Key};
+
 const WeatherBoard = () => {
+	const { weatherData } = useWeather();
+	console.log(weatherData);
+
 	return (
 		<main>
 			<section className="">
