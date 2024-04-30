@@ -26,7 +26,8 @@ const getFormattedDate = (value, type, inMS) => {
     }
     // const formatedDate = date.toLocaleDateString('en-us', options);
     // return formatedDate;
-    return new Intl.DateTimeFormat("en-us", options).format(date);
+    const formatedDate = Intl.DateTimeFormat("en-us", options).format(date)
+    return formatedDate;
 }
 
 
