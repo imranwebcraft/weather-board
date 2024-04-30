@@ -1,4 +1,23 @@
+import { useContext } from "react";
+import { WeatherContext } from "../../context";
+
 const WeatherCondition = () => {
+	const { weatherData } = useContext(WeatherContext);
+	const {
+		location,
+		climet,
+		temp,
+		maxTemp,
+		minTemp,
+		humidity,
+		cloudPercentage,
+		wind,
+		time,
+		longitude,
+		latitude,
+		climate,
+	} = weatherData;
+
 	return (
 		<div>
 			<p className="text-sm lg:text-lg font-bold uppercase mb-8">
