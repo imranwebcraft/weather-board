@@ -4,7 +4,7 @@ import { useState } from "react";
 const useWeather = () => {
     const [weatherData, setWeatherData] = useState({
         location:"",
-        climet: "",
+        climate: "",
         temp: "",
         maxTemp: "",
         minTemp: "",
