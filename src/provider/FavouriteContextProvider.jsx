@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { FavouriteContext } from "../context";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const FavouriteContextProvider = ({ children }) => {
 	// State
-	const [favourites, setFavourites] = useState("favourites", []);
+	const [favourites, setFavourites] = useLocalStorage("favourites", []);
 
 	const addToFavourites = (latitude, longitude, location) => {
 		setFavourites([
