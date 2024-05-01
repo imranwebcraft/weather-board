@@ -4,11 +4,11 @@ const FavoriteLocation = ({ onToggole }) => {
 	return (
 		<div
 			onClick={onToggole}
-			className="p-2 hover:bg-black/30 cursor-pointer flex gap-2 items-center rounded-md transition-all"
+			className="p-2 hover:bg-black/30 cursor-pointer flex flex-wrap gap-2 items-center rounded-md transition-all duration-200"
 		>
 			<img
 				src={heart}
-				alt=""
+				alt="heart-icon"
 			/>
 			<span>Favourite Locations</span>
 		</div>
