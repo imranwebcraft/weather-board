@@ -44,6 +44,11 @@ const data = [
         latitude: 43.6534817,
         longitude: -79.3839347,
     },
+    {
+        location: "Tokyo",
+        latitude: 35.6897,
+        longitude: 139.6922,
+    },
 ];
 
 const getLocation = () => data;

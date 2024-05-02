@@ -3,7 +3,7 @@ import { SearchContext } from "../context";
 
 const SearchContextProvider = ({ children }) => {
 	const [selectedLocation, setSelectedLocation] = useState({
-		location,
+		location: "",
 		latitude: 0,
 		longitude: 0,
 	});

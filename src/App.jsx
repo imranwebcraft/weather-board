@@ -1,16 +1,19 @@
 import Page from "./Page";
-import { SearchContextProvider, WeatherContextProvider } from "./provider";
-import FavouriteContextProvider from "./provider/FavouriteContextProvider";
+import {
+	FavouriteContextProvider,
+	SearchContextProvider,
+	WeatherContextProvider,
+} from "./provider";
 
 function App() {
 	return (
-		<WeatherContextProvider>
-			<FavouriteContextProvider>
-				<SearchContextProvider>
+		<SearchContextProvider>
+			<WeatherContextProvider>
+				<FavouriteContextProvider>
 					<Page />
-				</SearchContextProvider>
-			</FavouriteContextProvider>
-		</WeatherContextProvider>
+				</FavouriteContextProvider>
+			</WeatherContextProvider>
+		</SearchContextProvider>
 	);
 }
 

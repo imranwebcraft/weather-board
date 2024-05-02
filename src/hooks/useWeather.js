@@ -1,5 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { SearchContext } from "../context";
+// import { SearchContextProvider } from "../provider";
 
 const useWeather = () => {
     const [weatherData, setWeatherData] = useState({
@@ -20,6 +21,8 @@ const useWeather = () => {
         message: "Loading..."
     })
     const [error, setError] = useState(null);
+
+    const { selectedLocation } = useContext(SearchContext);
 
     //Data Fetching fuction
     const fetchWeatherData = async (latitude, longitude) => {
@@ -74,12 +77,20 @@ const useWeather = () => {
             message: "Finding location....."
         })
 
+        if(selectedLocation.latitude && selectedLocation.longitude){
+            console.log(`Inside ${selectedLocation}`);
+            
+            fetchWeatherData(selectedLocation.latitude, selectedLocation.longitude);
+        }else{
+
         navigator.geolocation.getCurrentPosition( (position) => {
+            console.log(`Inside sefault weather`);
             const latitude = position.coords.latitude;
             const logitude = position.coords.longitude;
             fetchWeatherData(latitude, logitude);
         })
-    }, [])
+    }
+    }, [selectedLocation.latitude, selectedLocation.longitude])
 
     return {
         weatherData,
