@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { FavouriteContext } from "../../context";
+import { FavouriteContext, SearchContext } from "../../context";
 
 const FavoriteLocationModal = ({ onToggole }) => {
 	const { favourites } = useContext(FavouriteContext);
+	const { setSelectedLocation } = useContext(SearchContext);
 
 	return (
 		<div className="max-w-xs py-4 bg-white rounded-md border-gray-500 absolute right-0 top-16 text-black shadow-lg">
@@ -15,7 +16,9 @@ const FavoriteLocationModal = ({ onToggole }) => {
 							onClick={onToggole}
 							className="hover:bg-gray-100 duration-150"
 						>
-							Dhaka
+							<a onClick={() => setSelectedLocation({ ...favourite })}>
+								{favourite.location}
+							</a>
 						</li>
 					))
 				) : (

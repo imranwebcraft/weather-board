@@ -10,7 +10,8 @@ const ToggoleFavorite = () => {
 	// Context
 
 	const { weatherData } = useContext(WeatherContext);
-	const { location, tatitude, longitude } = weatherData;
+
+	const { location, latitude, longitude } = weatherData;
 
 	const { favourites, addToFavourites, removeFromFavourites } =
 		useContext(FavouriteContext);
@@ -24,7 +25,7 @@ const ToggoleFavorite = () => {
 	const handleToggoleFavourite = () => {
 		const found = favourites.find((fav) => fav.location === location);
 		if (!found) {
-			addToFavourites(tatitude, longitude, location);
+			addToFavourites(latitude, longitude, location);
 		} else {
 			removeFromFavourites(location);
 		}

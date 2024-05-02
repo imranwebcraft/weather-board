@@ -5,11 +5,6 @@ const data = [
         longitude: -0.1276474,
     },
     {
-        location: "Pangsa",
-        latitude: 23.7800,
-        longitude: 89.4127,
-    },
-    {
         location: "Kushtia",
         latitude:23.9089,
         longitude:  89.1222,
