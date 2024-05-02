@@ -5,6 +5,21 @@ const data = [
         longitude: -0.1276474,
     },
     {
+        location: "Pangsa",
+        latitude: 23.7800,
+        longitude: 89.4127,
+    },
+    {
+        location: "Kushtia",
+        latitude:23.9089,
+        longitude:  89.1222,
+    },
+    {
+        location: "Rajbari",
+        latitude:23.7527,
+        longitude:  89.6446,
+    },
+    {
         location: "Kolkata",
         latitude: 22.5726723,
         longitude: 88.3638815,
@@ -31,46 +46,14 @@ const data = [
     },
 ];
 
-const getLocation = () => {
-    return data;
-}
+const getLocation = () => data;
 
 const getLocationByName = ( location ) => {
-    // If user not passes any location
-    if(!location) return null;
-
-    // If user passes any location
-    const filtered = data.filter( (item) => item.location === location );
-
-    if(filtered.length > 0) {
-        return filtered[0];
-    }else {
-        return {
-            location: location,
-            latitude: 0,
-            longitude: 0,
-        }
-    }   
-
+    if(!location || typeof location !== 'string') {
+        throw new Error('getLocationByName requires a string location argument');
+      }
+    const foundLocation = data.find( (item) => item.location === location );
+    return foundLocation ? foundLocation : {location, latitude: 0, longitude: 0};  
 }
-
-
-// const getLocationByName = (location) => {
-//     // Check if the input location is a string
-//     if (typeof location !== 'string') {
-//       throw new Error('Invalid input: Location must be a string');
-//     }
-  
-//     // Filter the data array to find the location
-//     const filtered = data.filter((item) => item.location === location);
-  
-//     // Check if the location is found in the data array
-//     if (filtered.length === 0) {
-//       throw new Error(`Location not found: ${location}`);
-//     }
-  
-//     // Return the first matching location
-//     return filtered[0];
-//   };
 
 export {getLocation, getLocationByName};
