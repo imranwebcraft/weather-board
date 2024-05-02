@@ -78,13 +78,13 @@ const useWeather = () => {
         })
 
         if(selectedLocation.latitude && selectedLocation.longitude){
-            console.log(`Inside ${selectedLocation}`);
+            // console.log(`Inside ${JSON.stringify(selectedLocation)}`);
             
             fetchWeatherData(selectedLocation.latitude, selectedLocation.longitude);
         }else{
 
         navigator.geolocation.getCurrentPosition( (position) => {
-            console.log(`Inside sefault weather`);
+            // console.log(`Inside sefault weather`);
             const latitude = position.coords.latitude;
             const logitude = position.coords.longitude;
             fetchWeatherData(latitude, logitude);

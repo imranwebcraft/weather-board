@@ -13,12 +13,13 @@ const FavoriteLocationModal = ({ onToggole }) => {
 					favourites.map((favourite) => (
 						<li
 							key={favourite.location}
-							onClick={onToggole}
+							onClick={() => {
+								onToggole();
+								setSelectedLocation({ ...favourite });
+							}}
 							className="hover:bg-gray-100 duration-150"
 						>
-							<a onClick={() => setSelectedLocation({ ...favourite })}>
-								{favourite.location}
-							</a>
+							<a>{favourite.location}</a>
 						</li>
 					))
 				) : (
