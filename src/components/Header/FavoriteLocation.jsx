@@ -1,6 +1,8 @@
 import heart from "../../assets/heart.svg";
 
 const FavoriteLocation = ({ onToggole }) => {
+
+
 	return (
 		<div
 			onClick={onToggole}

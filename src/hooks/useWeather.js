@@ -21,7 +21,6 @@ const useWeather = () => {
         message: "Loading..."
     })
     const [error, setError] = useState(null);
-
     const { selectedLocation } = useContext(SearchContext);
 
     //Data Fetching fuction
